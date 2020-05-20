@@ -1,3 +1,5 @@
+Fetch api GET:
+
 # source and the first idea by:
 
 //
