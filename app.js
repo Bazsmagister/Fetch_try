@@ -42,3 +42,41 @@ function jsonfetcherwitharrows() {
     .catch((error) => console.log(error));
   // .catch((error) => console.error(error));
 }
+
+function jsonfetchernookflag() {
+  fetch("http://httpstat.us/500")
+    .then(function (response) {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      return response;
+    })
+    .then(function (response) {
+      console.log("ok");
+    })
+    .catch(function (error) {
+      console.log(error);
+      alert(error);
+    });
+}
+
+//to make it DRY /Don't repeat yourself
+
+function handleErrors(response) {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  return response;
+}
+
+function fetchwithhandleerrors() {
+  fetch("http://httpstat.us/500")
+    .then(handleErrors)
+    .then(function (response) {
+      console.log("ok");
+    })
+    .catch(function (error) {
+      console.log(error);
+      alert(error);
+    });
+}
