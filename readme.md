@@ -2,4 +2,3 @@
 
 //
 https://googlechrome.github.io/samples/fetch-api/fetch-html.html
-//
